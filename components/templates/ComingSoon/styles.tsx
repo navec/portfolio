@@ -11,7 +11,8 @@ import styled from "@emotion/styled";
 export const ComingSoonWrapper = styled.div`
   background-color: ${SHADOW};
   display: flex;
-  min-height: ${FULL_HEIGHT};
+  height: 100%;
+  /* height: ${FULL_HEIGHT}; */
   flex-direction: column;
   padding: 3vh 3vw;
   color: #333333;
