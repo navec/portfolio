@@ -1,10 +1,4 @@
-import {
-  FULL_HEIGHT,
-  MOBILE_L,
-  MOBILE_S,
-  SHADOW,
-  TABLET,
-} from "@/components/theme";
+import { MOBILE_L, MOBILE_S, SHADOW, TABLET } from "@/components/theme";
 import { Heading, Text } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 
@@ -12,7 +6,6 @@ export const ComingSoonWrapper = styled.div`
   background-color: ${SHADOW};
   display: flex;
   height: 100%;
-  /* height: ${FULL_HEIGHT}; */
   flex-direction: column;
   padding: 3vh 3vw;
   color: #333333;
@@ -49,7 +42,7 @@ export const WrappedCountdown = styled.div`
 `;
 
 export const Tag = styled.div`
-  > span:first-child {
+  > span:first-of-type {
     color: #ddba79;
     font-size: 1.4rem;
     vertical-align: middle;
