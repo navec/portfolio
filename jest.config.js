@@ -15,6 +15,7 @@ const customJestConfig = {
     '@/organisms/(.*)$': '<rootDir>/components/organisms/$1',
     '@/molecules/(.*)$': '<rootDir>/components/molecules/$1',
     '@/atoms/(.*)$': '<rootDir>/components/atoms/$1',
+    '@/hoc/(.*)$': '<rootDir>/components/HOC/$1',
     '@/theme/(.*)$': '<rootDir>/components/theme/$1',
 
     '^@/pages/(.*)$': '<rootDir>/pages/$1',

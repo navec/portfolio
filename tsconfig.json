@@ -18,6 +18,7 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/atoms/*": ["components/atoms/*"],
+      "@/hoc/*": ["components/HOC/*"],
       "@/molecules/*": ["components/molecules/*"],
       "@/templates/*": ["components/templates/*"],
       "@/theme/*": ["components/theme/*"],

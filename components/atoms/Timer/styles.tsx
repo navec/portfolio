@@ -1,5 +1,5 @@
-import { MOBILE_L, TABLET } from "@/components/theme/devise";
-import styled from "@emotion/styled";
+import { MOBILE_L, TABLET } from '@/components/theme';
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   text-align: center;
