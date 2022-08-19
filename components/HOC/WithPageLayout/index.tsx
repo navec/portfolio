@@ -18,8 +18,7 @@ const withGlobalLayout = <P extends object>(
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-<meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded">
-
+          <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded">
         </Head>
         <ThemeProvider theme={theme}>
           <Header />
