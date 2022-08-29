@@ -12,17 +12,16 @@ const Stack: ComponentWithAs<'div', StackProps> = ({
   children,
   ...props
 }: StackProps) => {
-  return <HStack {...props}>{children}</HStack>;
+  return (
+    <HStack align="center" {...props}>
+      {children}
+    </HStack>
+  );
 };
 
 export const Nav = styled(Stack)`
-  width: ${({ theme }) => theme.space.percent.xxl};
-  align-items: center;
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.light};
-  position: fixed;
-  bottom: 0;
-  z-index: ${({ theme }) => theme.zIndices.overlay};
 `;
 
 export const Li: ChakraComponent<'div', {}> = ({ children, ...props }) => (

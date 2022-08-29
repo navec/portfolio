@@ -15,7 +15,7 @@ import {
 import styled from '@emotion/styled';
 
 export const Layout = styled(Box)`
-  min-height: ${({ theme }) => theme.space.viewHeight.xxl};
+  min-height: ${({ theme }) => theme.space.percent.xxl};
   margin-bottom: ${({ theme }) => theme.space.rem[20]};
   margin-bottom: ${({ theme }) => theme.space.rem[20]};
 `;

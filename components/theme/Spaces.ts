@@ -50,12 +50,12 @@ export const space = {
     custom: (val: number) => `${val}%`,
   },
   viewHeight: {
-    xs: `${xs}%`,
-    s: `${s}%`,
-    m: `${m}%`,
-    l: `${l}%`,
-    xl: `${xl}%`,
-    xxl: `${xxl}%`,
+    xs: `${xs}vh`,
+    s: `${s}vh`,
+    m: `${m}vh`,
+    l: `${l}vh`,
+    xl: `${xl}vh`,
+    xxl: `${xxl}vh`,
     custom: (size: number) => `${size}vh`,
   },
   viewWidth: {

@@ -3,7 +3,7 @@ import Menu from '@/components/templates/Menu';
 import { theme } from '@/components/theme/index-bis';
 import { ThemeProvider } from '@emotion/react';
 import Head from 'next/head';
-import { Container } from './styles';
+import * as S from './styles';
 
 const withGlobalLayout = <P extends object>(
   Component: React.ComponentType<P>,
@@ -18,14 +18,15 @@ const withGlobalLayout = <P extends object>(
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded">
         </Head>
         <ThemeProvider theme={theme}>
-          <Header />
-          <Menu />
-          <Container>
-            <Component {...props} />
-          </Container>
+          <S.Container>
+            <Header />
+            <S.Content>
+              <Component {...props} />
+            </S.Content>
+            <Menu />
+          </S.Container>
         </ThemeProvider>
       </>
     );

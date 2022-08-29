@@ -1,33 +1,32 @@
-import {
-  Button,
-  ButtonProps,
-  ComponentWithAs,
-  Heading,
-  Text,
-} from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const Layout = styled.div`
-  min-height: 100%;
-  margin-bottom: 5rem;
+  height: ${({ theme }) => theme.space.percent.xxl};
+  margin-bottom: ${({ theme }) => theme.space.rem[20]};
+  text-align: center;
+
+  & > * {
+    flex-shrink: 0;
+  }
 `;
 
 export const Title = styled(Heading)`
-  font-size: 2.8rem;
-  line-height: 2.8rem;
+  font-size: ${({ theme }) => theme.fontSizes['5xl']};
+  line-height: ${({ theme }) => theme.fontSizes['5xl']};
   font-family: font-file-82132;
   color: ${({ theme }) => theme.colors.primary};
   padding: ${({ theme }) =>
-    `${theme.space.viewHeight.s} ${theme.space.rem[6]} ${theme.space.viewHeight.s}`};
+    `${theme.space.rem[2]}  ${theme.space.rem[6]} ${theme.space.rem[2]} `};
 
   &::before,
   &::after {
-    display: block;
     font-family: 'La Belle Aurore', cursive;
+    display: block;
     color: #1a202cad;
     font-size: ${({ theme }) => theme.fontSizes.md};
     text-decoration: line-through;
-    margin-left: -${({ theme }) => theme.fontSizes.md};
+    margin-left: -${({ theme }) => theme.space.rem[4]};
     font-style: italic;
     color: ${({ theme }) => theme.colors.secondary};
   }
@@ -38,46 +37,32 @@ export const Title = styled(Heading)`
 
   &::after {
     content: '</h1>';
-    text-align: right;
   }
 `;
 
 export const Description = styled(Text)`
+  margin-top: ${({ theme }) => theme.space.rem[4]};
   padding: ${({ theme }) => `0 ${theme.space.rem[6]}`};
-  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  text-align: center;
 
   &::before,
   &::after {
     display: block;
     font-family: 'La Belle Aurore', cursive;
     color: #1a202cad;
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSizes.md};
     text-decoration: line-through;
-    margin-left: -20px;
+    margin-left: -${({ theme }) => theme.space.rem[4]};
     font-style: italic;
     color: ${({ theme }) => theme.colors.secondary};
   }
 
   &::before {
-    content: '<p>';
+    content: '<p >';
   }
 
   &::after {
     content: '</p>';
   }
-`;
-
-const Btn: ComponentWithAs<'button', ButtonProps> = ({
-  children,
-  ...props
-}) => (
-  <Button colorScheme="teal" variant="outline" {...props}>
-    {children}
-  </Button>
-);
-
-export const Action = styled(Btn)`
-  margin-top: 2rem;
-  margin-left: ${({ theme }) => theme.space.rem[6]};
-  padding: ${({ theme }) => `0 ${theme.space.rem[8]}`};
 `;

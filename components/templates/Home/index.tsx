@@ -9,8 +9,11 @@ const Home = () => (
       <br />
       <span>Gaël Batchi.</span>
     </S.Title>
-    <S.Description>I am a Full-Stack Developer</S.Description>
-    <S.Action>Contact me</S.Action>
+    <S.Description>
+      Développeur Full-Stack freelance situé à Paris. Si vous voulez en savoir
+      plus à propos de moi n&apos;hésitez pas à me contacter à
+      contact@navecbatchi.fr.
+    </S.Description>
   </S.Layout>
 );
 

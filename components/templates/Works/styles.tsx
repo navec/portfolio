@@ -2,7 +2,7 @@ import { Box, Heading } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 export const Layout = styled(Box)`
-  min-height: ${({ theme }) => theme.space.viewHeight.xxl};
+  min-height: ${({ theme }) => theme.space.percent.xxl};
   margin-bottom: ${({ theme }) => theme.space.rem[4]};
 `;
 
