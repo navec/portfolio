@@ -1,16 +1,6 @@
 import { Heading, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-export const Layout = styled.div`
-  height: ${({ theme }) => theme.space.percent.xxl};
-  margin-bottom: ${({ theme }) => theme.space.rem[20]};
-  text-align: center;
-
-  & > * {
-    flex-shrink: 0;
-  }
-`;
-
 export const Title = styled(Heading)`
   font-size: ${({ theme }) => theme.fontSizes['5xl']};
   line-height: ${({ theme }) => theme.fontSizes['5xl']};

@@ -1,7 +1,7 @@
 import * as S from './styles';
 
 const Home = () => (
-  <S.Layout>
+  <>
     <S.Title as="h1">
       <span>Hi,</span>
       <br />
@@ -14,7 +14,7 @@ const Home = () => (
       plus à propos de moi n&apos;hésitez pas à me contacter à
       contact@navecbatchi.fr.
     </S.Description>
-  </S.Layout>
+  </>
 );
 
 export default Home;
