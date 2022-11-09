@@ -1,58 +1,65 @@
-import { Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Tag, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
-export const Title = styled(Heading)`
-  font-size: ${({ theme }) => theme.fontSizes['5xl']};
-  line-height: ${({ theme }) => theme.fontSizes['5xl']};
-  font-family: font-file-82132;
-  color: ${({ theme }) => theme.colors.primary};
-  padding: ${({ theme }) =>
-    `${theme.space.rem[2]}  ${theme.space.rem[6]} ${theme.space.rem[2]} `};
+export const Layout = styled(Flex)`
+  flex-direction: row;
+  height: ${({ theme }) => theme.space.percent.xxl};
+  width: ${({ theme }) => theme.space.viewWidth.xxl};
+  align-items: center;
 
-  &::before,
-  &::after {
-    font-family: 'La Belle Aurore', cursive;
-    display: block;
-    color: #1a202cad;
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    text-decoration: line-through;
-    margin-left: -${({ theme }) => theme.space.rem[4]};
-    font-style: italic;
-    color: ${({ theme }) => theme.colors.secondary};
-  }
-
-  &::before {
-    content: '<h1>';
-  }
-
-  &::after {
-    content: '</h1>';
+  & > * {
+    flex: 1;
   }
 `;
 
-export const Description = styled(Text)`
-  margin-top: ${({ theme }) => theme.space.rem[4]};
-  padding: ${({ theme }) => `0 ${theme.space.rem[6]}`};
-  font-size: ${({ theme }) => theme.fontSizes.md};
-  text-align: center;
+export const Introduction = styled(Box)`
+  padding: ${({ theme }) => theme.space.rem[16]};
+  max-width: ${({ theme }) => theme.space.viewWidth.l};
 
-  &::before,
-  &::after {
-    display: block;
-    font-family: 'La Belle Aurore', cursive;
-    color: #1a202cad;
-    font-size: ${({ theme }) => theme.fontSizes.md};
-    text-decoration: line-through;
-    margin-left: -${({ theme }) => theme.space.rem[4]};
-    font-style: italic;
-    color: ${({ theme }) => theme.colors.secondary};
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-width: ${({ theme }) => theme.space.viewWidth.xxl};
+    padding: ${({ theme }) => theme.space.rem[4]};
+    padding: ${({ theme }) => `${theme.space.rem[8]} `};
   }
+`;
 
-  &::before {
-    content: '<p >';
+export const Subtitle = styled(Heading)`
+  font-size: ${({ theme }) => theme.space.rem[16]} !important;
+  margin-bottom: ${({ theme }) => theme.space.rem[8]};
+
+  @media screen and (max-width: 767px) {
+    font-size: ${({ theme }) => theme.space.rem[12]} !important;
   }
+`;
 
-  &::after {
-    content: '</p>';
+export const Title = styled(Heading)`
+  font-size: ${({ theme }) => theme.space.rem[20]} !important;
+
+  @media screen and (max-width: 767px) {
+    font-size: ${({ theme }) => theme.space.rem[16]} !important;
+  }
+`;
+
+export const Job = styled(Tag)`
+  margin-bottom: ${({ theme }) => theme.space.rem[8]};
+`;
+
+export const AboutMe = styled(Text)`
+  margin-bottom: ${({ theme }) => theme.space.rem[8]};
+`;
+
+export const More = Button;
+
+export const Photo = styled(Flex)<{ poster: string }>`
+  background-image: url(${({ poster }) => poster});
+  height: ${({ theme }) => theme.space.percent.xxl};
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: end;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
   }
 `;

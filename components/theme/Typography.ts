@@ -1,10 +1,11 @@
 export const typography = {
   colors: {
-    light: '#E3E3E3',
+    light: 'white',
     tertiary: '#E2D784',
-    primary: '#05595B',
+    primary: '#008080',
     secondary: '#062C30',
     white: '#ffffff',
+    black: '#000000',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -26,6 +27,7 @@ export const typography = {
     '7xl': '4.5rem',
     '8xl': '6rem',
     '9xl': '8rem',
+    custom: (size: number) => `${size}rem`,
   },
   fontWeights: {
     hairline: 100,

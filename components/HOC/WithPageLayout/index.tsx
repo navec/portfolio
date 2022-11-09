@@ -1,4 +1,3 @@
-import Header from '@/components/templates/Header';
 import Menu from '@/components/templates/Menu';
 import Head from 'next/head';
 import * as S from './styles';
@@ -18,11 +17,10 @@ const withGlobalLayout = <P extends object>(
           />
         </Head>
         <S.Container>
-          <Header />
-          <S.Content>
-            <Component {...props} />
-          </S.Content>
           <Menu />
+          <S.StyledBox>
+            <Component {...props} />
+          </S.StyledBox>
         </S.Container>
       </>
     );
