@@ -23,6 +23,7 @@
       "@/templates/*": ["components/templates/*"],
       "@/theme/*": ["components/theme/*"],
       "@/pages/*": ["pages/*"],
+      "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"]
     }
   },

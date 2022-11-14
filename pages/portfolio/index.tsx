@@ -1,41 +1,22 @@
 import WithPageLayout from '@/components/HOC/WithPageLayout';
+import { ProjectCardProps } from '@/components/organisms/ProjectCard';
 import PortfolioTemplate from '@/components/templates/Portfolio';
+import { API_URL } from '@/pages/api/constant';
 
-const item = {
-  name: 'Project 1',
-  title: 'Portfolio',
-  poster: 'https://wallpaperaccess.com/full/348158.png',
-  description: 'My fake description',
-  tags: ['react', 'front'],
-  preview: '#',
-  source: '#',
+type PortfolioProps = {
+  title: string;
+  projects: ProjectCardProps[];
 };
 
-const project = {
-  items: [
-    { ...item, title: 'Project 1' },
-    { ...item, title: 'Project 2' },
-    { ...item, title: 'Project 3' },
-  ],
-};
-
-const { title, projects } = {
-  title: 'Portfolio',
-  projects: [
-    { ...item, title: 'Project 1' },
-    { ...item, title: 'Project 2' },
-    { ...item, title: 'Project 3' },
-    {
-      ...item,
-      title: 'Project 4',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic rerum asperiores molestiae reiciendis quo consequatur et, harumsuscipit iure debitis aperiam! Sit nam nisi laudantium aspernatur dignissimos omnis ex at.',
-    },
-    { ...item, title: 'Project 5' },
-  ],
-};
-const Portfolio = () => {
+const Portfolio = ({ title, projects }: PortfolioProps) => {
   return <PortfolioTemplate title={title} projects={projects} />;
 };
+
+export async function getStaticProps() {
+  const data = await fetch(`${API_URL}/api/portfolio`).then((res) =>
+    res.json()
+  );
+  return { props: { ...data } };
+}
 
 export default WithPageLayout(Portfolio, 'Portfolio');

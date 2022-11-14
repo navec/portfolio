@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 export const Layout = styled(Flex)`
   justify-content: center;
   height: ${({ theme }) => theme.space.rem[28]};
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
@@ -38,23 +39,7 @@ export const MenuItem = styled(Box)`
       color: initial;
     }
   }
-
-  ::before {
-    /* content: '';
-    height: ${({ theme }) => theme.space.rem[8]};
-    border-left: ${({ theme }) => theme.space.rem[0.5]} dashed; */
-  }
 `;
-
-// export const Dot = styled.div`
-//   height: ${({ theme }) => theme.space.rem[3]};
-//   width: ${({ theme }) => theme.space.rem[3]};
-//   background-color: ${({ theme }) => theme.colors.secondary};
-// `;
-
-// export const DotEnd = styled(Dot)`
-//   margin-top: ${({ theme }) => theme.space.rem[4]} !important;
-// `;
 
 export const Photo = styled(Flex)`
   background-image: url('https://wallpaperaccess.com/full/348158.png');

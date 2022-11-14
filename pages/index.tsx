@@ -1,23 +1,28 @@
 import WithPageLayout from '@/components/HOC/WithPageLayout';
 import Home from '@/components/templates/Home';
+import { API_URL } from '@/pages/api/constant';
 
-const { title, subtitle, tag, aboutMe, poster } = {
-  title: "I'm Gaël",
-  subtitle: 'Hi there',
-  tag: 'Fullstack developper',
-  aboutMe:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic rerum asperiores molestiae reiciendis quo consequatur et, harumsuscipit iure debitis aperiam! Sit nam nisi laudantium aspernatur dignissimos omnis ex at.',
-  poster: 'https://wallpaperaccess.com/full/348158.png',
+type IndexProps = {
+  subtitle: string;
+  title: string;
+  tag: string;
+  description: string;
+  poster: string;
 };
 
-const Index = () => (
+const Index = ({ title, subtitle, tag, description, poster }: IndexProps) => (
   <Home
     title={title}
     subTitle={subtitle}
     tag={tag}
-    text={aboutMe}
+    text={description}
     poster={poster}
   />
 );
+
+export async function getStaticProps() {
+  const data = await fetch(`${API_URL}/api/home`).then((res) => res.json());
+  return { props: { ...data } };
+}
 
 export default WithPageLayout(Index, 'Gael portfolio');

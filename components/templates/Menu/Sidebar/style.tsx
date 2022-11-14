@@ -40,7 +40,7 @@ export const MenuItem = styled(ListItem)`
     }
   }
 
-  &:first-child {
+  &:first-of-type {
     ::before {
       content: '';
       height: ${({ theme }) => theme.space.rem['0']};

@@ -43,7 +43,7 @@ export const MenuIcon = styled(Hamburger)`
     cursor: pointer;
 
     &.show {
-      & > span:first-child {
+      & > span:first-of-type {
         transform-origin: 0% 100%;
         transition: transform 0.4s ease-in-out;
       }
@@ -59,7 +59,7 @@ export const MenuIcon = styled(Hamburger)`
     }
 
     &.close {
-      & > span:first-child {
+      & > span:first-of-type {
         transform: rotate(45deg);
         transform-origin: 0% 0%;
         transition: transform 0.4s ease-in-out;

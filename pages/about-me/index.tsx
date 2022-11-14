@@ -1,46 +1,17 @@
 import WithPageLayout from '@/components/HOC/WithPageLayout';
+import { SummaryJobProps } from '@/components/organisms/SummaryJob';
+import { SummaryStatProps } from '@/components/organisms/SummaryStat';
 import AboutMeTemplate from '@/components/templates/AboutMe';
-import { SiJamstack, SiNodedotjs, SiReact } from 'react-icons/si';
+import { API_URL } from '@/pages/api/constant';
 
-const { title, subtitle, description, summary } = {
-  title: 'ABOUT ME',
-  subtitle: "I'm Gael Batchi, Fullstack developper.",
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatibus officiis quis, laboriosam aliquid ea praesentium incidunt repudiandae quae quasi veritatis eius labore fuga tempore blanditiis a eos. Error, earum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatibus officiis quis, laboriosam aliquid ea praesentium incidunt repudiandae quae quasi veritatis eius labore fuga tempore blanditiis a eos. Error, earum!',
-  summary: {
-    stats: [
-      { value: '7+', description: 'YEARS EXPERIENCES' },
-      { value: '5+', description: 'PROJECTS DONE' },
-      { value: '4', description: 'HAPPY CLIENTS' },
-      { value: '0', description: 'FOLLOWERS' },
-    ],
-    job: {
-      title: 'What I do ?',
-      items: [
-        {
-          icon: SiReact,
-          title: 'React',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cumque tenetur ',
-        },
-        {
-          icon: SiNodedotjs,
-          title: 'Node JS',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cumque tenetur ',
-        },
-        {
-          icon: SiJamstack,
-          title: 'JamStack',
-          description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cumque tenetur ',
-        },
-      ],
-    },
-  },
+type AboutMeProps = {
+  title: string;
+  subtitle: string;
+  description: string;
+  summary: SummaryStatProps & { job: SummaryJobProps };
 };
 
-const AboutMe = () => {
+const AboutMe = ({ title, subtitle, description, summary }: AboutMeProps) => {
   return (
     <AboutMeTemplate
       title={title}
@@ -50,5 +21,10 @@ const AboutMe = () => {
     />
   );
 };
+
+export async function getStaticProps() {
+  const data = await fetch(`${API_URL}/api/about-me`).then((res) => res.json());
+  return { props: { ...data } };
+}
 
 export default WithPageLayout(AboutMe, 'About me');
