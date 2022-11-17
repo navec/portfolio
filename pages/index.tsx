@@ -17,6 +17,7 @@ const Index = ({ title, subtitle, tag, description, poster }: IndexProps) => (
     tag={tag}
     text={description}
     poster={poster}
+    action={{ name: 'More about me', link: '/about-me' }}
   />
 );
 

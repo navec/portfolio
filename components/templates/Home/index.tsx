@@ -5,7 +5,7 @@ type HomeProps = {
   title: string;
   tag: string;
   text: string;
-  action?: { name: string; link: string };
+  action: { name: string; link: string };
   poster: string;
 };
 
@@ -21,9 +21,7 @@ const Home = ({ subTitle, title, tag, text, action, poster }: HomeProps) => (
 
       <S.AboutMe>{text}</S.AboutMe>
 
-      <S.More size="lg" borderRadius="2xl" colorScheme="teal">
-        {action?.name || 'More about me'}
-      </S.More>
+      <S.More href={action.link}>{action.name}</S.More>
     </S.Introduction>
     <S.Photo poster={poster} />
   </S.Layout>

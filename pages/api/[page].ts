@@ -1,9 +1,9 @@
-import { ControllerFactory, Module } from 'lib/factory';
+import { getDataByPageName } from '@/lib/queries';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const pageHandler = ({ query }: NextApiRequest, res: NextApiResponse) => {
-  const controller = ControllerFactory.getInstance(Module.page);
-  res.status(200).json(controller.getPageByName(query.page as string));
+  const pageName = query.page as string;
+  res.status(200).json(getDataByPageName(pageName));
 };
 
 export default pageHandler;

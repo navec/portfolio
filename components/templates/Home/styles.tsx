@@ -1,3 +1,4 @@
+import Link, { LinkProps } from '@/components/molecules/Link';
 import { Box, Button, Flex, Heading, Tag, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
@@ -48,7 +49,23 @@ export const AboutMe = styled(Text)`
   margin-bottom: ${({ theme }) => theme.space.rem[8]};
 `;
 
-export const More = Button;
+export const ActionButton = styled(Button)`
+  padding: 0 ${({ theme }) => theme.space.rem[8]};
+  background: ${({ theme }) => theme.colors.primary}cf;
+  color: ${({ theme }) => theme.colors.light};
+  line-height: ${({ theme }) => theme.space.rem[12]};
+  height: ${({ theme }) => theme.space.rem[12]};
+  border-radius: var(--chakra-radii-2xl);
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary};
+  }
+`;
+export const More = ({ children, ...props }: LinkProps) => (
+  <Link {...props}>
+    <ActionButton>{children}</ActionButton>
+  </Link>
+);
 
 export const Photo = styled(Flex)<{ poster: string }>`
   background-image: url(${({ poster }) => poster});
