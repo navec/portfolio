@@ -52,7 +52,7 @@ export const MenuIcon = styled(Hamburger)`
         transition: transform 0.4s ease-in-out;
       }
 
-      & > span:nth-child(2) {
+      & > span:nth-of-type(2) {
         display: block;
         transition: display 0.4s ease-in-out;
       }
@@ -70,7 +70,7 @@ export const MenuIcon = styled(Hamburger)`
         transition: transform 0.4s ease-in-out;
       }
 
-      & > span:nth-child(2) {
+      & > span:nth-of-type(2) {
         display: none;
       }
     }
