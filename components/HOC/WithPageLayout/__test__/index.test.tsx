@@ -1,4 +1,4 @@
-import mockNextRouter, { renderTestingWrapper } from '@/test/test-utils';
+import { mockNextRouter, renderTestingWrapper } from '@/test/test-utils';
 import '@testing-library/jest-dom';
 import { screen } from '@testing-library/react';
 import WithPageLayout from '..';

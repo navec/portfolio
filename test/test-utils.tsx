@@ -6,7 +6,7 @@ import { NextRouter, useRouter } from 'next/router';
 jest.mock('next/router');
 const mockUseNextRouter = useRouter as jest.MockedFunction<typeof useRouter>;
 
-export function createMockRouter(routerProps: Partial<NextRouter>) {
+export const createMockRouter = (routerProps: Partial<NextRouter>) => {
   return {
     basePath: '',
     pathname: '/',
@@ -31,16 +31,16 @@ export function createMockRouter(routerProps: Partial<NextRouter>) {
     isPreview: false,
     ...routerProps,
   };
-}
+};
 
 /**
  * Mock the `useRouter()` hook and return the mocked router instance.
  */
-export default function mockNextRouter(overrides: Partial<NextRouter> = {}) {
+export const mockNextRouter = (overrides: Partial<NextRouter> = {}) => {
   const mockRouter = createMockRouter(overrides);
   mockUseNextRouter.mockReturnValue(mockRouter);
   return mockRouter;
-}
+};
 
 export const renderTestingWrapper = (wrappedComponent: any) =>
   render(<ThemeProvider theme={theme}>{wrappedComponent}</ThemeProvider>);

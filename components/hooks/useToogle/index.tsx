@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-export const useToogle = (value: boolean = false) => {
-  const [isActive, setIsActive] = useState<boolean>(false);
+export const useToggle = (value: boolean = false) => {
+  const [isActive, setIsActive] = useState<boolean>(value);
 
   const active = () => setIsActive(true);
 

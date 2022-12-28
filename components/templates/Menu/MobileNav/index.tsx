@@ -1,5 +1,4 @@
-import { useLocation } from '@/components/hooks/useLocation';
-import { useToogle } from '@/components/hooks/useToogle';
+import { useToggle } from '@/components/hooks/useToogle';
 import { MenuItemProps } from '@/components/templates/Menu';
 import Item from './MobileNavItem';
 
@@ -13,8 +12,7 @@ type MobileNavProps = {
 };
 
 const MobileNav = ({ items, socials }: MobileNavProps) => {
-  const { isActive, toogle } = useToogle();
-  const { pageName } = useLocation();
+  const { isActive, toogle } = useToggle();
 
   return (
     <S.Layout>

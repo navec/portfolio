@@ -7,8 +7,7 @@ export const Layout = styled(MenuItem)<{ selected: boolean }>`
   font-size: ${({ theme }) => theme.fontSizes.xl};
 
   & > a {
-    color: ${({ theme, selected }) =>
-      selected ? theme.colors.primary : theme.colors.black};
+    color: ${({ theme, selected }) => (selected ? theme.colors.primary : theme.colors.black)};
   }
 
   &:active,

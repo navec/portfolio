@@ -7,7 +7,7 @@ import * as S from './styles';
 type ContentProps = {
   type: LinkType;
   value: string;
-  alias: string | undefined;
+  alias?: string;
 };
 
 export type SocialContactProps = SimpleGridProps & {
@@ -27,11 +27,7 @@ const SocialContact = ({ socials, ...props }: SocialContactProps) => {
           <S.Title as="h3" fontSize="large">
             {title}
           </S.Title>
-          <S.Content
-            href={content.value}
-            type={content.type}
-            isExternal={content.type === 'text'}
-          >
+          <S.Content href={content.value} type={content.type} isExternal={content.type === 'text'}>
             {content.alias || content.value}
           </S.Content>
         </S.Social>

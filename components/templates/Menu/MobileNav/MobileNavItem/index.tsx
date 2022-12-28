@@ -10,12 +10,7 @@ type MobileNavItemProps = {
   isSelected?: boolean;
 };
 
-const MobileNavItem = ({
-  href,
-  icon,
-  value,
-  isSelected = false,
-}: MobileNavItemProps) => {
+const MobileNavItem = ({ href, icon, value, isSelected = false }: MobileNavItemProps) => {
   return (
     <S.Layout selected={isSelected}>
       <Link href={href}>

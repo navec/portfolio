@@ -10,7 +10,7 @@ const DestopNav = ({ items }: { items: DestopNavProps[] }) => {
     <S.Layout>
       <S.Menu spacing={6}>
         {items.map(({ id, name, href, isSelected }) => (
-          <S.MenuItem className={isSelected ? 'active' : undefined} key={id}>
+          <S.MenuItem role="presentation" className={isSelected ? 'active' : undefined} key={id}>
             <Link href={href}>
               <a>{name}</a>
             </Link>
